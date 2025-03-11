@@ -1,23 +1,5 @@
-My Auth App
-A mobile authentication app built with React Native, TypeScript, Expo, and Firebase Authentication. This project showcases a modern, secure, and scalable approach to user authentication, featuring login, signup, and logout flows. It’s designed to demonstrate my expertise in mobile development, type-safe coding, and integrating backend services.
-Features
-User Authentication:
-Sign-up with email, password, and name (with password confirmation)
-
-Login with email and password
-
-Logout functionality
-
-Form Validation:
-Email format checking
-
-Password length requirements (minimum 8 characters)
-
-Matching password confirmation for signup
-
-My Auth App
-
-A mobile authentication app built with React Native, TypeScript, Expo, and Firebase Authentication. This project showcases a modern, secure, and scalable approach to user authentication, featuring login, signup, and logout flows. It’s designed to demonstrate my expertise in mobile development, type-safe coding, and integrating backend services, making it a strong portfolio piece for recruiters and tech professionals.
+Todos App
+A mobile app with authentication built with React Native, TypeScript, Expo, and Firebase Authentication. This project showcases a modern, secure, and scalable approach to user authentication, featuring login, signup, and logout flows. It’s designed to demonstrate my expertise in mobile development, type-safe coding, and integrating backend services.
 
 Features
 
@@ -27,7 +9,7 @@ Features
     - Logout functionality
 - Form Validation:
     - Email format checking
-    - Password length requirements (minimum 8 characters)
+    - Password length requirements (minimum 6 characters)
     - Matching password confirmation for signup
 - Responsive UI:
     - Clean, mobile-friendly design with Tailwind CSS (via NativeWind)
