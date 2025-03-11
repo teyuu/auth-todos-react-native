@@ -32,27 +32,27 @@ const Auth = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!formData.email || !formData.password) {
-      Alert.alert("Error", "Por favor complete todos los campos requeridos");
+      Alert.alert("Error", "Please fill in all required fields");
       return false;
     }
 
     if (!emailRegex.test(formData.email)) {
-      Alert.alert("Error", "Formato de email inválido");
+      Alert.alert("Error", "Invalid email format");
       return false;
     }
 
     if (formData.password.length < 6) {
-      Alert.alert("Error", "La contraseña debe tener al menos 8 caracteres");
+      Alert.alert("Error", "Password must be at least 8 characters long");
       return false;
     }
 
     if (!isLogin) {
       if (!formData.name) {
-        Alert.alert("Error", "Por favor ingrese su nombre");
+        Alert.alert("Error", "Please enter your name");
         return false;
       }
       if (formData.password !== formData.confirmPassword) {
-        Alert.alert("Error", "Las contraseñas no coinciden");
+        Alert.alert("Error", "Passwords do not match");
         return false;
       }
     }
@@ -101,12 +101,12 @@ const Auth = () => {
           {/* Header */}
           <View className="w-[80%] mb-5">
             <Text className="text-white text-center uppercase text-4xl font-bold">
-              {isLogin ? "Ingresar" : "Crear una cuenta nueva"}
+              {isLogin ? "Sign In" : "Create a New Account"}
             </Text>
             <Text className="text-white text-lg text-center mt-6">
               {isLogin
-                ? "Inicia sesión para continuar"
-                : "¿Ya estás registrado? Inicia sesión aquí"}
+                ? "Sign in to continue"
+                : "Sign up to continue"}
             </Text>
           </View>
 
@@ -114,8 +114,8 @@ const Auth = () => {
           <View className="w-[80%] gap-6 mt-5">
             {!isLogin && (
               <InputField
-                label="Nombre"
-                placeholder="Ingresar nombre"
+                label="Name"
+                placeholder="Enter your name"
                 value={formData.name}
                 onChangeText={(text: string) =>
                   setFormData((prev) => ({ ...prev, name: text }))
@@ -124,7 +124,7 @@ const Auth = () => {
             )}
             <InputField
               label="Email"
-              placeholder="Ingresar email"
+              placeholder="Enter your email"
               value={formData.email}
               onChangeText={(text: string) =>
                 setFormData((prev) => ({ ...prev, email: text }))
@@ -133,8 +133,8 @@ const Auth = () => {
               autoCapitalize="none"
             />
             <InputField
-              label="Contraseña"
-              placeholder="Ingresar contraseña"
+              label="Password"
+              placeholder="Enter your password"
               value={formData.password}
               onChangeText={(text: string) =>
                 setFormData((prev) => ({ ...prev, password: text }))
@@ -143,8 +143,8 @@ const Auth = () => {
             />
             {!isLogin && (
               <InputField
-                label="Confirmar Contraseña"
-                placeholder="Confirmar contraseña"
+                label="Confirm Password"
+                placeholder="Confirm your password"
                 value={formData.confirmPassword}
                 onChangeText={(text: string) =>
                   setFormData((prev) => ({ ...prev, confirmPassword: text }))
@@ -161,19 +161,15 @@ const Auth = () => {
               }`}
             >
               <Text className="text-black text-lg text-center font-medium">
-                {isSubmitting
-                  ? "Procesando..."
-                  : isLogin
-                  ? "Acceder"
-                  : "Registrarse"}
+                {isSubmitting ? "Processing..." : isLogin ? "Sign In" : "Sign Up"}
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => setIsLogin(!isLogin)}>
               <Text className="text-white text-center mt-4">
                 {isLogin
-                  ? "¿No tienes una cuenta? Regístrate aquí"
-                  : "¿Ya tienes una cuenta? Inicia sesión aquí"}
+                  ? "Don't have an account? Sign up here"
+                  : "Already have an account? Sign in here"}
               </Text>
             </TouchableOpacity>
           </View>

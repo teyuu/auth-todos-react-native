@@ -13,17 +13,17 @@ export default function Home() {
       await logout();
       router.replace("/auth");
     } catch (error) {
-      Alert.alert("Error", "No se pudo cerrar la sesión. Inténtelo de nuevo.");
+      Alert.alert("Error", "Failed to log out. Please try again.");
     }
   };
 
   return (
     <SafeAreaView className="bg-black w-full h-full">
       <View className="flex-1 justify-center items-center">
-        <Text className="text-white text-2xl">¡Bienvenido {user?.email}!</Text>
+        <Text className="text-white text-2xl">Welcome, {user?.email}!</Text>
         <TouchableOpacity onPress={handleLogout} className="mt-5">
           <Text className="text-white text-lg bg-red-500 py-2 px-4 rounded-md">
-            Cerrar sesión
+            Log Out
           </Text>
         </TouchableOpacity>
       </View>
