@@ -1,4 +1,4 @@
-Todos App
+Todos App.
 A mobile app with authentication built with React Native, TypeScript, Expo, and Firebase Authentication. This project showcases a modern, secure, and scalable approach to user authentication, featuring login, signup, and logout flows. It’s designed to demonstrate my expertise in mobile development, type-safe coding, and integrating backend services.
 
 Features
