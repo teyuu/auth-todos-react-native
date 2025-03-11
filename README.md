@@ -64,4 +64,41 @@ What I Learned
 - Responsive design with Tailwind CSS in mobile apps
 - Efficient navigation with Expo Router
 
+Installation & Setup
+
+1. Clone the Repository:
+    
+    git clone https://github.com/teyuu/my-auth-app.git
+    cd my-auth-app
+    ```
+    
+2. Install Dependencies:
+   
+    npm install
+
+    
+3. Configure Firebase:
+    - Create a Firebase project and enable Email/Password authentication.
+    - Add your Firebase config to config/firebaseConfig.ts (not in repo for security):
+        
+        typescript
+        
+        ```tsx
+        import { initializeApp } from "firebase/app";
+        import { getAuth } from "firebase/auth";
+        
+        const firebaseConfig = {
+          apiKey: "your-api-key",
+          authDomain: "your-auth-domain",
+          // ... other config
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        export const FIREBASE_AUTH = getAuth(app);
+        ```
+        
+4. Run the App:
+
+    npx expo start
+    ```
 
