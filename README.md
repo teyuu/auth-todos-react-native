@@ -112,4 +112,4 @@ Installation & Setup
 
     ```
     npx expo start
-```
+
