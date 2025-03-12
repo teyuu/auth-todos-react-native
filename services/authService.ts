@@ -23,7 +23,7 @@ export const signIn = async (email: string, password: string) => {
 
   } catch (error) {
     const firebaseError = error as FirebaseError;
-    Alert.alert("Error", `Inicio de sesión fallido: ${firebaseError.message}`);
+    console.log("Error", `Inicio de sesión fallido: ${firebaseError.message}`);
     throw error;
   }
 };

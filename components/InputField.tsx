@@ -1,16 +1,24 @@
-import { View, Text, TextInput } from 'react-native'
-const InputField = ({ label, placeholder, value, onChangeText }: any) => {
+import React from "react";
+import { View, Text, TextInput } from "react-native";
+
+const InputField = (({ label, placeholder, value, onChangeText, ...textInputProps }: any) => {
   return (
     <View className="gap-3">
-        <Text className="text-white uppercase text-lg font-semibold">{label}</Text>
-        <TextInput
-          placeholder={placeholder}
-          placeholderTextColor="#ccc"
-          className="border border-gray-400 bg-transparent text-white px-4 py-4 rounded-md focus:border-emerald-400"
-          value={value}
-          onChangeText={onChangeText}
-        />
-      </View>
-  )
-}
-export default InputField
+      <Text className="text-white uppercase text-lg font-semibold">
+        {label}
+      </Text>
+      <TextInput
+
+        placeholder={placeholder}
+        placeholderTextColor="#ccc"
+        className={`p-5 rounded-lg border bg-gray-700 border-gray-600 text-white`}
+        value={value}
+        onChangeText={onChangeText}
+        {...textInputProps}
+      />
+    </View>
+  );
+});
+
+export default InputField;
+

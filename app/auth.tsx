@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
+  Keyboard,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Redirect, useRouter } from "expo-router";
@@ -71,11 +72,11 @@ const Auth = () => {
         await signUp(formData.email, formData.password);
         router.replace("/(home)");
       }
-    } catch (error: any) {
-      console.error("Authentication error:", error);
-      Alert.alert("Error", error.message);
+    } catch (error) {
+      Alert.alert("Error", "Invalid credentials");
     } finally {
       setIsSubmitting(false);
+      Keyboard.dismiss(); 
     }
   };
 
@@ -84,34 +85,32 @@ const Auth = () => {
   }
 
   return (
-    <SafeAreaView className="bg-black w-full h-full">
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        className="flex-1"
+    <SafeAreaView className="bg-gray-900 w-full h-full">
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          paddingVertical: 20,
+        }}
       >
-        <ScrollView
-          className="w-full"
-          contentContainerStyle={{
-            flexGrow: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            paddingVertical: 20,
-          }}
-        >
-          {/* Header */}
-          <View className="w-[80%] mb-5">
-            <Text className="text-white text-center uppercase text-4xl font-bold">
-              {isLogin ? "Sign In" : "Create a New Account"}
-            </Text>
-            <Text className="text-white text-lg text-center mt-6">
-              {isLogin
-                ? "Sign in to continue"
-                : "Sign up to continue"}
-            </Text>
-          </View>
+        {/* Header */}
+        <View className="w-[85%] mb-8">
+          <Text className="text-white text-3xl font-bold tracking-tight text-center">
+            {isLogin ? "Welcome Back" : "Join Us"}
+          </Text>
+          <Text className="text-gray-400 text-lg text-center mt-2">
+            {isLogin ? "Sign in to manage your todos" : "Create an account to get started"}
+          </Text>
+        </View>
 
-          {/* Form */}
-          <View className="w-[80%] gap-6 mt-5">
+        {/* Form */}
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20} // Adjust offset for Android
+          className="w-[85%]"
+        >
+          <View className="bg-gray-800 rounded-xl p-5 shadow-lg gap-4">
             {!isLogin && (
               <InputField
                 label="Name"
@@ -145,7 +144,7 @@ const Auth = () => {
               <InputField
                 label="Confirm Password"
                 placeholder="Confirm your password"
-                value={formData.confirmPassword}
+                value={formData.confirmPassword!}
                 onChangeText={(text: string) =>
                   setFormData((prev) => ({ ...prev, confirmPassword: text }))
                 }
@@ -156,25 +155,25 @@ const Auth = () => {
             <TouchableOpacity
               onPress={handleAuth}
               disabled={isSubmitting}
-              className={`bg-white py-3 rounded-md mt-3 ${
-                isSubmitting ? "opacity-50" : ""
+              className={`bg-indigo-600 py-3 rounded-lg shadow-md mt-2 ${
+                isSubmitting ? "opacity-50" : "active:bg-indigo-700"
               }`}
             >
-              <Text className="text-black text-lg text-center font-medium">
+              <Text className="text-white text-center font-semibold text-lg">
                 {isSubmitting ? "Processing..." : isLogin ? "Sign In" : "Sign Up"}
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => setIsLogin(!isLogin)}>
-              <Text className="text-white text-center mt-4">
+              <Text className="text-gray-400 text-center mt-2">
                 {isLogin
-                  ? "Don't have an account? Sign up here"
-                  : "Already have an account? Sign in here"}
+                  ? "Need an account? Sign up here"
+                  : "Already registered? Sign in here"}
               </Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </SafeAreaView>
   );
 };
