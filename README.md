@@ -78,15 +78,15 @@ A modern, secure, and scalable mobile application built with **React Native**, *
 Installation & Setup
 
 1. Clone the Repository:
-    
+   ``` 
     git clone https://github.com/teyuu/my-auth-app.git
     cd my-auth-app
     ```
     
 2. Install Dependencies:
-   
+   ```
     npm install
-
+   ```
     
 3. Configure Firebase:
     - Create a Firebase project and enable Email/Password authentication.
@@ -112,4 +112,4 @@ Installation & Setup
 
     ```
     npx expo start
-
+```
