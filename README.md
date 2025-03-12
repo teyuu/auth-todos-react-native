@@ -35,7 +35,8 @@ A modern, secure, and scalable mobile application built with **React Native**, *
 - **Firestore**: Real-time database for todo storage
 - **Tailwind CSS (NativeWind)**: Utility-first styling
 - **Expo Router**: Modern navigation solution
-
+  
+```markdown
 ## Project Structure
 
 ├── app/
@@ -56,7 +57,7 @@ A modern, secure, and scalable mobile application built with **React Native**, *
 ├── config/
 │   └── firebaseConfig.ts  # Firebase initialization (not in repo)
 └── [README.md](http://readme.md/)
-
+```
 ## Key Achievements
 
 - **Type-Safe Implementation**: End-to-end type safety with TypeScript interfaces for auth, todos, and errors.
