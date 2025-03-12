@@ -14,7 +14,7 @@ const InputField = (({ label, placeholder, value, onChangeText, ...textInputProp
         value={value}
         onChangeText={onChangeText}
         {...textInputProps}
-        style={{ borderWidth: 1, borderColor: "#6b7280"}}
+        style={{ borderWidth: 1, borderColor: "#6b7280",}}
       />
     </View>
   );
