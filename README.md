@@ -1,6 +1,6 @@
 # Todos App
 
-A modern, secure, and scalable mobile application built with **React Native**, **TypeScript**, **Expo**, **Firebase Authentication**, and **Firestore**. This project demonstrates my expertise in mobile development, type-safe coding, and integrating backend services. It features a complete authentication flow (login, signup, logout) and a fully functional todo list with create, read, update, and delete (CRUD)
+I developed a modern, secure, and scalable mobile application using React Native, TypeScript, Expo, Firebase Authentication, and Firestore. This app showcases my skills in mobile development, type-safe coding, and integrating backend services. I implemented a complete authentication flow—including login, signup, and logout—alongside a fully functional todo list with create, read, update, and delete (CRUD) capabilities.
 
 ## Features
 
