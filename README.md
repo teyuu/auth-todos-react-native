@@ -109,6 +109,6 @@ Installation & Setup
         
 4. Run the App:
 
-    npx expo start
     ```
+    npx expo start
 
