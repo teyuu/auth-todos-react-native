@@ -1,67 +1,77 @@
-Todos App.
-A mobile app with authentication built with React Native, TypeScript, Expo, and Firebase Authentication. At the moment, this project showcases a modern, secure, and scalable approach to user authentication, featuring login, signup, and logout flows. It’s designed to demonstrate my expertise in mobile development, type-safe coding, and integrating backend services.
+# Todos App
 
-Features
+A modern, secure, and scalable mobile application built with **React Native**, **TypeScript**, **Expo**, **Firebase Authentication**, and **Firestore**. This project demonstrates my expertise in mobile development, type-safe coding, and integrating backend services. It features a complete authentication flow (login, signup, logout) and a fully functional todo list with create, read, update, and delete (CRUD)
 
-- User Authentication:
-    - Sign-up with email, password, and name (with password confirmation)
-    - Login with email and password
+## Features
+
+- **User Authentication**:
+    - Sign up with email, password, and name (with password confirmation)
+    - Log in with email and password
     - Logout functionality
-- Form Validation:
-    - Email format checking
-    - Password length requirements (minimum 6 characters)
+- **Todo Management**:
+    - Add new todos
+    - Toggle todo completion status
+    - Delete todos
+    - Real-time todo list synced with Firestore
+- **Form Validation**:
+    - Email format validation
+    - Password length requirement (minimum 6 characters)
     - Matching password confirmation for signup
-- Responsive UI:
-    - Clean, mobile-friendly design with Tailwind CSS (via NativeWind)
-    - Keyboard-avoiding views and scrollable forms for better UX
-- State Management:
-    - Global auth context with React Context API
-    - Real-time user state updates via Firebase’s onAuthStateChanged
-- Navigation:
-    - Expo Router for seamless, file-based navigation
+    - Empty field checks for todos
+- **Responsive UI**:
+    - Clean, mobile-friendly design with **Tailwind CSS** (via NativeWind)
+- **State Management**:
+    - Global auth context with **React Context API**
+- **Navigation**:
+    - **Expo Router** for file-based, seamless navigation
     - Protected routes based on authentication status
 
-Tech Stack
+## Tech Stack
 
-- React Native: Cross-platform mobile framework
-- Expo: Simplified development and deployment workflow
-- TypeScript: Static typing for robust, maintainable code
-- Firebase Authentication: Secure backend for user management
-- Tailwind CSS (NativeWind): Utility-first styling
-- Expo Router: Modern navigation solution
+- **React Native**: Cross-platform mobile framework
+- **Expo**: Simplified development and deployment workflow
+- **TypeScript**: Static typing for robust, maintainable code
+- **Firebase Authentication**: Secure backend for user management
+- **Firestore**: Real-time database for todo storage
+- **Tailwind CSS (NativeWind)**: Utility-first styling
+- **Expo Router**: Modern navigation solution
 
-Project Structure
+## Project Structure
 
-```
 ├── app/
-│   └── auth.tsx          # Authentication screen with login/signup
+│   ├── auth.tsx           # Authentication screen (login/signup)
+│   └── (home)/index.tsx   # Home screen with todo list
 ├── components/
-│   └── InputField.tsx    # Reusable form input component
+│   └── InputField.tsx     # Reusable form input component
 ├── context/
-│   └── AuthProvider.tsx  # Global auth context and state management
+│   └── AuthProvider.tsx   # Global auth context and state management
 ├── hooks/
-│   └── useAuth.ts        # Custom hook for auth access
+│   └── useAuth.ts         # Custom hook for auth access
 ├── services/
-│   └── authService.ts    # Firebase authentication logic
+│   ├── authService.ts     # Firebase auth logic
+│   └── todoService.ts     # Firestore CRUD operations
 ├── types/
-│   └── auth.ts           # TypeScript type definitions
-└── README.md
-```
+│   ├── auth.ts            # Auth-related TypeScript types
+│   └── todo.ts            # Todo-related TypeScript types
+├── config/
+│   └── firebaseConfig.ts  # Firebase initialization (not in repo)
+└── [README.md](http://readme.md/)
 
-Key Achievements
+## Key Achievements
 
-- Type-Safe Implementation: Leveraged TypeScript for end-to-end type safety, defining interfaces for form data, auth context, and errors.
-- Clean Architecture: Organized code into modular layers (services, context, components, types) for scalability and maintainability.
-- Secure Auth Flow: Integrated Firebase Authentication with proper error handling and user feedback via alerts.
-- User Experience: Built a responsive UI with loading states, form validation, and smooth navigation.
-- Best Practices: Applied modern development standards, including consistent naming, code separation, and documentation.
+- **Type-Safe Implementation**: End-to-end type safety with TypeScript interfaces for auth, todos, and errors.
+- **Clean Architecture**: Modular layers (services, context, components, types) for scalability and maintainability.
+- **Secure Auth Flow**: Firebase Authentication with robust error handling and user feedback via alerts.
+- **Real-Time Data**: Firestore integration for seamless todo CRUD operations with real-time updates.
+- **Best Practices**: Consistent naming, code separation, and detailed documentation.
 
-What I Learned
+## What I Learned
 
-- Advanced TypeScript in React Native (e.g., typing async functions, context)
-- Firebase Authentication setup and optimization
+- Advanced TypeScript in React Native (e.g., typing async functions, context, Firestore data)
+- Firebase Authentication and Firestore setup/optimization
 - Global state management with Context API and custom hooks
-- Responsive design with Tailwind CSS in mobile apps
+- Real-time database syncing with Firestore
+- Responsive design and keyboard handling with Tailwind CSS in mobile apps
 - Efficient navigation with Expo Router
 
 Installation & Setup
